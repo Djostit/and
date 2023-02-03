@@ -6,6 +6,9 @@
 html {
     background: #FFFFFF;
 }
+html, body {
+    margin: 0;
+}
 
 .header {
     margin: 0 auto;
@@ -30,11 +33,11 @@ html {
     font-size: 16px;
     color: #073158;
     padding: 0 20px;
+    text-underline-offset: 2px;
 }
 
 .nav li a:hover {
     text-decoration: underline;
-    text-underline-offset: 2px;
 }
 
 .nav li:nth-child(1) {
@@ -72,9 +75,13 @@ html {
     padding: 14px 24px;
     font-family: 'Poppins';
     font-weight: bold;
+
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
 }
 
 .header__inner button:hover {
+    cursor: pointer;
     background-color: #003385;
 }
 
@@ -98,6 +105,59 @@ html {
 .hero__container {
     flex: 1 2 50%;
 }
+
+.hero__container h1{
+    color: #073158;
+    font-size: 54;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.hero__container h1 mark{
+    color: #2277FF;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.hero__container h2{
+    color: #747D85;
+    font-size: 16;
+    font-family: 'Poppins';
+    font-weight: normal;
+}
+
+.started {
+    background-color: #FFB905;
+    color: #010A1A;
+    border: none;
+    border-radius: 45px;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 14px 24px;
+    font-family: 'Poppins';
+    font-weight: normal;
+
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+.started:hover {
+    cursor: pointer;
+    background-color: #d19600;
+}
+
+.watch {
+    background-color: #FFFBEF;
+    color: #424242;
+    border: none;
+    border-radius: 45px;
+    text-transform: capitalize;
+    font-size: 16px;
+    padding: 14px 24px;
+    font-family: 'Poppins';
+    font-weight: normal;
+}
+
 .hero__image {
     flex-direction: 2 1 50%;
     overflow: hidden;
