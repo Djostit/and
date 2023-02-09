@@ -3,6 +3,11 @@
     font-family: 'MazzardH', sans-serif;
 }
 
+html, body, h1, h2, a, p, hr {
+    margin: 0;
+    padding: 0;
+}
+
 button {
     -webkit-transition: background-color 0.5s;
     transition: background-color 0.5s;
@@ -12,12 +17,9 @@ html {
     background: #FFFFFF;
 }
 
-html, body {
-    margin: 0;
-}
-
 .header {
     margin: 0 auto;
+    width: 90%;
 }
 
 .header__inner {
@@ -39,12 +41,23 @@ html, body {
     font-size: 16px;
     color: #073158;
     padding: 0 20px;
-    text-underline-offset: 2px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+.nav li a::after { 
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #073158;
+    width: 0;
+    left: 50%;
+    top: 100%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) all;
 }
 
-.nav li a:hover {
-    text-decoration: underline;
-}
+.nav li a:hover::after { width: 100%; }
 
 .nav li:nth-child(1) {
    text-transform: uppercase;
@@ -54,17 +67,18 @@ html, body {
 .header__inner button {
     background-color: #2277FF;
     color: #FFFFFF;
+    cursor: pointer;
     border: none;
     border-radius: 45px;
     text-transform: uppercase;
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 22px;
     font-family: 'Poppins';
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .header__inner button:hover {
-    cursor: pointer;
+    
     background-color: #005aeb;
 }
 
@@ -73,10 +87,18 @@ html, body {
     height: 1px;
     border-radius: 6px;
     border: 0;
-    margin: 0 25px;
+    margin: 1% auto;
+    width: 90%;
+}
+
+.main-content {
+    margin: 0 auto;
+    width: 90%;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
     border-radius: 16px;
     padding: 6px;
@@ -84,17 +106,19 @@ html, body {
 
 .hero {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero__container {
-    flex: 1 2 50%;
+    flex: 1 2 60%;
 }
 
 .hero__container h1{
     color: #073158;
-    font-size: 54;
+    font-size: 54px;
     font-family: 'Poppins';
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .hero__container h1 mark{
@@ -105,11 +129,14 @@ html, body {
 
 .hero__container h2{
     color: #747D85;
-    font-size: 16;
+    font-size: 16px;
     font-family: 'Poppins';
     font-weight: normal;
+    margin: 2% 0;
 }
-
+.buttons {
+    margin: 4% 2% 0 0;
+}
 .btn__started {
     background-color: #FFB905;
     color: #010A1A;
@@ -117,9 +144,9 @@ html, body {
     border-radius: 45px;
     text-transform: uppercase;
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 22px;
     font-family: 'Poppins';
-    font-weight: normal;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -134,9 +161,9 @@ html, body {
     border-radius: 45px;
     text-transform: capitalize;
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 22px;
     font-family: 'Poppins';
-    font-weight: normal;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -145,7 +172,7 @@ html, body {
 }
 
 .hero__image {
-    flex-direction: 2 1 50%;
+    flex-direction: 2 1 40%;
     overflow: hidden;
 }
 
@@ -172,14 +199,100 @@ html, body {
     fill-opacity: 1;
 }
 
+.brands {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.brand {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.brand li {
+    padding: 20px 14px;
+}
+
+.services {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 5% 0;
+}
+
+
+.img img{
+    height: 200px;
+    width: 200px;
+}
+
+.img li {
+    text-align: start;
+    align-items: start;
+}
+
+.img p {
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #073158;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.img div {
+    font-family: 'Poppins';
+    font-weight: normal;
+    color: #747D85;
+    font-size: 16px;
+    padding-top: 10%;
+}
+
+.comprasion__container {
+    display: flex;
+}
+
 .footer__container {
-    padding-top: 16px;
+    padding: 7%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: baseline;
     background-color: #073158;
     color: #FFFFFF;
     font-family: 'Poppins';
     font-size: 16px;
+}
+
+.info p {
+    padding: 10px 0;
+}
+
+.footer__container div {
+    color: #FFB905;
+}
+
+.footer__container p {
+    color: #FFFFFF;
+}
+
+.footer__container ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer__container ul li {
+    color: #DADBDC;
+    padding: 5px 0;
+    text-underline-offset: 2px;
+    transition: all 0.4s ease;
+}
+
+.footer__container ul li:hover {
+    color: #FFB905;
+    text-decoration: underline;
 }
